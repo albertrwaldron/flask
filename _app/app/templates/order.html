@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <form action="" method="POST">
+        <select>Customer</select>
+        <button class="btn" type="submit">Choose</button>
+        <button class="btn">Create New</button>
+    </form>
+</div>
+<div class="container-fluid">
+    <p>
+        Some Info about customer
+    </p>
+</div>
+<div class="container-fluid">
+    <form action="" method="POST">
+        <select>Order</select>
+        <button class="btn" type="submit">Choose Order</button>
+        <button class="btn">Create New</button>
+    </form>
+</div>
+<div class="container-fluid">
+    <p>
+        Some Info about order
+    </p>
+</div>
+<div class="container-fluid">
+    {% include 'form_snippet.html' %}
+</div>
+<div class="container-fluid">
+    view of line items
+</div>
+{% endblock %}

@@ -243,6 +243,14 @@ def inventory():
         cols=Inventory.__table__.columns,
         query=Inventory.query.all()
     )
+@app.route('/sales_order')
+def sales_order():
+    return render_template(
+        'order.html',
+        nav=nav,
+        form=SaleLineItemForm()
+    )
+
 
 with app.test_request_context():
     nav = [
