@@ -1,0 +1,16 @@
+{% if query and cols%}
+<table class="table">
+    <tr>
+        {% for key in cols.keys() %}
+        <th>{{key}}</th>
+        {% endfor %}
+    </tr>
+{% for row in query %}
+    <tr>
+    {% for key in cols.keys() %}
+        <td>{{row[key]}}</td>
+    {% endfor %}
+    </tr>
+{% endfor %}
+</table>
+{% endif %}

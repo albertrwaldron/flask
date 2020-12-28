@@ -1,0 +1,26 @@
+{% if form %}
+<div class="container">
+    <div class="formwrapper">
+        <form method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+            {% for field in form %}
+            {% if field.label.text not in ['CSRF Token'] %}
+            <div class="col-12">
+                <fieldset class="input-group">
+                    {% if field.label.text not in ['Submit'] %} 
+                        {{field.label.text}} &nbsp;
+                    {% endif %}
+                    {{field}}
+                    {% if field.errors %}
+                        <ul class="errors">
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </fieldset>
+            </div>
+            {% endif %}{% endfor %}
+        </form>
+    </div>
+</div>
+{% endif %}
